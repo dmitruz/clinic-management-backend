@@ -1,4 +1,4 @@
-const appointmentDao = require('../dao/appointmentInfo.dao');
+const appointmentDao = require('../dao/appoitmentInfo.dao');
 
 function addAppointments(req, res) {
     let appointment = req.body;
