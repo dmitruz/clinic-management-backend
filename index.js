@@ -30,7 +30,7 @@ app.use(cors("*"));
 app.use('/', require('./routes/index'));
 
 // Validate Server PORT
-const PORT = parseInt(process.env.PORT.trim(), 10);
+const PORT = process.env.PORT ? parseInt(process.env.PORT.trim(), 10) : 4000;
 if (!process.env.PORT) {
     console.error("❌ ERROR: PORT is not defined in .env");
     process.exit(1);
