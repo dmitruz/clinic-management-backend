@@ -1,7 +1,7 @@
 # clinic-management-backend
 
 <p align="center">
-  <img src="images/health-tech.png" alt="HealthTech Logo" width="140"/>
+  <img src="images/health-tech (1).png" alt="HealthTech Logo" width="140"/>
 </p>
 
 <h1 align="center">HealthTech – Clinic Management Backend API</h1>
@@ -76,7 +76,7 @@ Below is the **Entity Relationship Diagram (ERD)** used by the backend.
 It describes how the major entities—Patients, Doctors, Staff, Lab Technicians, Appointments, and Reports—connect to each other.
 
 <p align="center">
-  <img src="images/erd-schema.png" alt="Database ERD Diagram" width="900"/>
+  <img src="images/erd-schema (1).png" alt="Database ERD Diagram" width="900"/>
 </p>
 
 The system supports:
