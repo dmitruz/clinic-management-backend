@@ -1,0 +1,41 @@
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: clinic-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: clinic
+      MYSQL_USER: clinicuser
+      MYSQL_PASSWORD: clinicpass
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: clinic-backend
+    restart: always
+    depends_on:
+      - mysql
+    env_file:
+      - .env.mysql
+    environment:
+      NODE_ENV: mysql
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: >
+      sh -c "
+        npm run seed &&
+        npm start
+      "
+
+volumes:
+  mysql_data:
